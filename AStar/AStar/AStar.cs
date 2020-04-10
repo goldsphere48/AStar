@@ -49,6 +49,10 @@ namespace AStar
             graph.AddEdges(_graph.E);
             var start = graph.V.Find(v => v.Equals(startLocation)) as AStarLocation;
             var finish = graph.V.Find(v => v.Equals(finishLocation)) as AStarLocation;
+            if (start == null || finish == null)
+            {
+                return new Stack<ILocation>();
+            }
             return FindPathAStar(start, finish);
         }
 
@@ -104,7 +108,7 @@ namespace AStar
                     }
                 }
             }
-            return null;
+            return new Stack<ILocation>();
         }
 
         private double HeuristicFunction(ILocation start, ILocation finish)

@@ -10,7 +10,7 @@ namespace AStar
         static void Main(string[] args)
         {
             var matrix = new Matrix();
-            matrix.ReadFromFile("map.txt");
+            matrix.ReadFromFile("../../../test6.txt");
             Console.WriteLine("Лабиринт:");
             matrix.Print();
             var graph = matrix.ConvertToGraph();
